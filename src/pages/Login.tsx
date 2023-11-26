@@ -7,12 +7,12 @@ import {
 } from "@ionic/react";
 import React from "react";
 
-const Home: React.FC = () => {
+const Login: React.FC = () => {
 	return (
 		<IonPage>
 			<IonHeader>
-				<IonToolbar>
-					<IonTitle>Home</IonTitle>
+				<IonToolbar color={"primary"}>
+					<IonTitle>Login</IonTitle>
 				</IonToolbar>
 			</IonHeader>
 			<IonContent className="ion-padding">UI goes here...</IonContent>
@@ -20,4 +20,4 @@ const Home: React.FC = () => {
 	);
 };
 
-export default Home;
+export default Login;
