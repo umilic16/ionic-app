@@ -23,7 +23,7 @@ const Login: React.FC<{}> = () => {
 
 	const login = (event: any) => {
 		event.preventDefault();
-		router.push("/");
+		router.push("/app", "root");
 	};
 
 	return (
@@ -85,6 +85,7 @@ const Login: React.FC<{}> = () => {
 											className="ion-margin-top"
 											color={"secondary"}
 											routerLink="/register"
+											routerDirection="none"
 										>
 											Register
 											<IonIcon slot="end" icon={personCircleOutline} />

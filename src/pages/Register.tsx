@@ -14,22 +14,18 @@ import {
 	IonRow,
 	IonTitle,
 	IonToolbar,
+	useIonRouter,
 } from "@ionic/react";
-import {
-	checkmarkDone,
-	logInOutline,
-	personCircleOutline,
-} from "ionicons/icons";
+import { checkmarkDone } from "ionicons/icons";
 import React from "react";
-import { useHistory } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
 const Register: React.FC = () => {
-	const history = useHistory();
+	const router = useIonRouter();
 
 	const register = (event: any) => {
 		event.preventDefault();
-		history.push("/");
+		router.push("/app", "root");
 	};
 
 	return (

@@ -21,8 +21,8 @@ import "@ionic/react/css/text-transformation.css";
 /* Theme variables */
 import "./theme/variables.css";
 
-import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Menu from "./pages/Menu";
 import Register from "./pages/Register";
 
 setupIonicReact();
@@ -31,14 +31,11 @@ const App: React.FC = () => (
 	<IonApp>
 		<IonReactRouter>
 			<IonRouterOutlet>
+				<Route component={Login} path="/login" exact />
+				<Route component={Register} path="/register" exact />
+				<Route component={Menu} path="/app" />
 				<Route exact path="/">
-					<Home />
-				</Route>
-				<Route exact path="/login">
-					<Login />
-				</Route>
-				<Route exact path="/register">
-					<Register />
+					<Redirect to="/login" />
 				</Route>
 			</IonRouterOutlet>
 		</IonReactRouter>
