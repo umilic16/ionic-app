@@ -17,6 +17,7 @@ const CardComponent: FC<Card> = (props) => {
   const { type, number, profile, expiry, secret, color } = props;
   const [lastFourCardNumbers, setLastFourCardNumbers] =
     useState<string>("****");
+  const [isFrontShown, setIsFrontShown] = useState<boolean>(true);
 
   const cardClass: string = `card_${color}`;
   const cardTypeLogo: string =
@@ -29,10 +30,15 @@ const CardComponent: FC<Card> = (props) => {
     setLastFourCardNumbers(lastFourNumbers);
   }, [number]);
 
+  const handleCardClick = () => {
+    setIsFrontShown((prevVal) => !prevVal);
+  };
+
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleCardClick}>
       <div
         className={`${styles.card__front} ${styles.card__part} ${styles[cardClass]}`}
+        style={{ transform: `rotateY(${isFrontShown ? 0 : 180}deg)` }}
       >
         <div className={styles.card__front__top}>
           <img
@@ -60,9 +66,9 @@ const CardComponent: FC<Card> = (props) => {
           <p className={styles.card__info}>{expiry}</p>
         </div>
       </div>
-
       <div
         className={`${styles.card__back} ${styles.card__part} ${styles[cardClass]}`}
+        style={{ transform: `rotateY(${isFrontShown ? -180 : 0}deg)` }}
       >
         <div className={styles.card__black_line}></div>
         <div className={styles.card__back_content}>

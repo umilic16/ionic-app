@@ -32,11 +32,11 @@
     background-position: center;
     background-size: cover;
     border-radius: 8px;
-    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -63,16 +63,10 @@
 
 .card__front {
     padding: 18px;
-    transform: rotateY(0);
-    -webkit-transform: rotateY(0);
-    -moz-transform: rotateY(0);
 }
 
 .card__back {
     padding: 18px 0;
-    transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
 }
 
 .card__black_line {
@@ -184,16 +178,4 @@
     position: absolute;
     bottom: 15px;
     left: 15px;
-}
-
-.card:hover .card__front {
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-}
-
-.card:hover .card__back {
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
 }
