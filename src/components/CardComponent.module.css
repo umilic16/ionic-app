@@ -46,11 +46,11 @@
 }
 
 .card_orange {
-    background: linear-gradient(to right bottom, #fd696b, #fa616e, #f65871, #c74261, #d62158);
+    background: linear-gradient(to right bottom, #ca6b2c, #e7875b, #eeb17f, #e4925c, #d15a2a);
 }
 
 .card_blue {
-    background: linear-gradient(to right bottom, #699dfd, #61b5fa, #58aff6, #4b86c9, #2151d6);
+    background: linear-gradient(to right bottom, #3e79e7, #4e9fe0, #83bdec, #5693da, #2151d6);
 }
 
 .card_black {
@@ -58,7 +58,7 @@
 }
 
 .card_purple {
-    background: linear-gradient(to right bottom, #7a43df, #644897, #8964cf, #633cac, #512c96);
+    background: linear-gradient(to right bottom, #7a43df, #835fc7, #aa83f3, #805cc4, #512c96);
 }
 
 .card__front {
@@ -85,6 +85,7 @@
 
 .card__front_chip {
     left: 1.2rem;
+    top: 4.2rem;
     height: 1.5rem !important;
     position: absolute;
 }
@@ -109,22 +110,25 @@
     color: #fff;
     text-align: center;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 90px;
 }
 
 .card__space_75 {
     text-align: left;
     width: 75%;
-    float: left;
+    bottom: 22px;
+    position: absolute;
 }
 
 .card__space_25 {
     width: 25%;
-    float: left;
+    right: 10px;
+    bottom: 15px;
+    position: absolute;
 }
 
 .card__label {
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 1px;
@@ -132,7 +136,7 @@
 
 .card__info {
     margin-bottom: 0;
-    margin-top: 5px;
+    margin-top: 0;
     font-size: 16px;
     line-height: 18px;
     color: #fff;

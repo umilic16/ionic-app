@@ -40,23 +40,20 @@ const CardComponent: FC<Card> = (props) => {
         className={`${styles.card__front} ${styles.card__part} ${styles[cardClass]}`}
         style={{ transform: `rotateY(${isFrontShown ? 0 : 180}deg)` }}
       >
-        <div className={styles.card__front__top}>
-          <img
-            className={`${styles.card__front_chip} ${styles.card__square}`}
-            src="/chip.png"
-            alt="1"
-          />
-          <img
-            className={`${styles.card__front_logo} ${styles.card__logo}`}
-            src={cardTypeLogo}
-            alt="2"
-          />
-        </div>
+        <img
+          className={`${styles.card__front_chip} ${styles.card__square}`}
+          src="/chip.png"
+          alt="1"
+        />
+        <img
+          className={`${styles.card__front_logo} ${styles.card__logo}`}
+          src={cardTypeLogo}
+          alt="2"
+        />
         <p className={styles.card_number}>
           **** **** **** {lastFourCardNumbers}
         </p>
         <div className={styles.card__space_75}>
-          <span className={styles.card__label}>Card holder</span>
           <p
             className={styles.card__info}
           >{`${profile.firstname} ${profile.surname}`}</p>
