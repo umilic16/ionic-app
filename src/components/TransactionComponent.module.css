@@ -1,0 +1,45 @@
+.avatarImage {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 500px;
+    color: black;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 0.5rem !important;
+    border: 2px solid rgb(44, 44, 44);
+    margin-top: 0.2rem;
+}
+
+.transactionItem {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.transactionItemContent {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    margin-top: -0.2rem;
+    margin-bottom: -0.2rem;
+}
+
+.transactionContent {
+    padding: 1rem;
+    text-align: left !important;
+}
+
+.green {
+    color: rgb(0, 130, 0);
+}
+
+.red {
+    color: rgb(170, 0, 0);
+}

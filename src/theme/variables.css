@@ -45,6 +45,13 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-danger-shade: #83160b;
   --ion-color-danger-tint: #a03024;
 
+	--ion-color-dark: #141414;
+	--ion-color-dark-rgb: 20,20,20;
+	--ion-color-dark-contrast: #ffffff;
+	--ion-color-dark-contrast-rgb: 255,255,255;
+	--ion-color-dark-shade: #121212;
+	--ion-color-dark-tint: #2c2c2c;
+
   --ion-color-medium: #B4D2E7;
   --ion-color-medium-rgb: 180, 210, 231;
   --ion-color-medium-contrast: #000000;
@@ -66,4 +73,14 @@ html {
   /* For more information on dynamic font scaling, visit the documentation: 
   https://ionicframework.com/docs/layout/dynamic-font-scaling */
   --ion-dynamic-font: var(--ion-default-dynamic-font);
+}
+
+ion-label {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+ion-item ion-avatar {
+  display: flex;
+  align-items: center;
 }
