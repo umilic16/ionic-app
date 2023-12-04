@@ -13,36 +13,13 @@ import {
 	IonToolbar,
 } from "@ionic/react";
 import {
-	cardOutline,
-	cashOutline,
-	homeOutline,
 	logOutOutline,
-	walletOutline,
 } from "ionicons/icons";
 import React from "react";
 import { Redirect, Route } from "react-router";
-import Accounts from "./Accounts";
-import Cards from "./Cards";
-import Home from "./Home";
-import Payments from "./Payments";
+import { routes } from "../routes/routes";
 
 const Menu: React.FC = () => {
-	const pages = [
-		{ name: "Home", path: "/app/home", icon: homeOutline, component: Home },
-		{
-			name: "Accounts",
-			path: "/app/accounts",
-			icon: walletOutline,
-			component: Accounts,
-		},
-		{
-			name: "Payments",
-			path: "/app/payments",
-			icon: cashOutline,
-			component: Payments,
-		},
-		{ name: "Cards", path: "/app/cards", icon: cardOutline, component: Cards },
-	];
 	return (
 		<IonPage>
 			<IonSplitPane contentId="main">
@@ -53,7 +30,7 @@ const Menu: React.FC = () => {
 						</IonToolbar>
 					</IonHeader>
 					<IonContent>
-						{pages.map((item, index) => (
+						{routes.map((item, index) => (
 							<IonMenuToggle key={index} autoHide={false}>
 								<IonItem
 									detail={true}
@@ -80,7 +57,7 @@ const Menu: React.FC = () => {
 					</IonContent>
 				</IonMenu>
 				<IonRouterOutlet id="main">
-					{pages.map((item, index) => (
+					{routes.map((item, index) => (
 						<Route
 							key={index}
 							exact

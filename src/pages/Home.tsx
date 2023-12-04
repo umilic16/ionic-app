@@ -1,8 +1,10 @@
 import {
+  IonButtons,
   IonCol,
   IonContent,
   IonGrid,
   IonHeader,
+  IonMenuButton,
   IonPage,
   IonRow,
   IonTitle,
@@ -31,6 +33,9 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color={"primary"}>
+          <IonButtons slot="start">
+            <IonMenuButton></IonMenuButton>
+          </IonButtons>
           <IonTitle>{pageTitle}</IonTitle>
         </IonToolbar>
       </IonHeader>
