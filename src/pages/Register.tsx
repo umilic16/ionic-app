@@ -10,6 +10,7 @@ import {
   IonHeader,
   IonIcon,
   IonInput,
+  IonLoading,
   IonPage,
   IonRow,
   IonTitle,
@@ -17,14 +18,20 @@ import {
   useIonRouter,
 } from "@ionic/react";
 import { checkmarkDone } from "ionicons/icons";
-import React from "react";
+import React, { useState } from "react";
 
 const Register: React.FC = () => {
   const router = useIonRouter();
 
+  const [busy, setBusy] = useState(false);
+
   const register = (event: any) => {
+    setBusy(true);
     event.preventDefault();
-    router.push("/app", "root");
+    setTimeout(() => {
+      setBusy(false);
+      router.push("/app", "root");
+    }, 1000);
   };
 
   return (
@@ -38,6 +45,11 @@ const Register: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+        <IonLoading
+          duration={0}
+          message={"Registration in progress..."}
+          isOpen={busy}
+        />
         <IonGrid>
           <IonRow className="ion-justify-content-center">
             <IonCol

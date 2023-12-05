@@ -8,6 +8,7 @@ import {
   IonHeader,
   IonIcon,
   IonInput,
+  IonLoading,
   IonPage,
   IonRow,
   IonTitle,
@@ -15,14 +16,20 @@ import {
   useIonRouter,
 } from "@ionic/react";
 import { logInOutline, personCircleOutline } from "ionicons/icons";
-import React from "react";
+import React, { useState } from "react";
 
 const Login: React.FC<{}> = () => {
   const router = useIonRouter();
 
+  const [busy, setBusy] = useState(false);
+
   const login = (event: any) => {
+    setBusy(true);
     event.preventDefault();
-    router.push("/app", "root");
+    setTimeout(() => {
+      setBusy(false);
+      router.push("/app", "root");
+    }, 1000);
   };
 
   return (
@@ -33,6 +40,7 @@ const Login: React.FC<{}> = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+        <IonLoading duration={0} message={"Logging in..."} isOpen={busy} />
         <IonGrid>
           <IonRow className="ion-justify-content-center">
             <IonCol
