@@ -1,15 +1,25 @@
 import {
 	IonButtons,
+	IonCol,
 	IonContent,
+	IonGrid,
 	IonHeader,
 	IonMenuButton,
 	IonPage,
+	IonRow,
 	IonTitle,
 	IonToolbar,
 } from "@ionic/react";
-import React from "react";
+import "@ionic/react/css/ionic-swiper.css";
+import React, { useRef } from "react";
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import AccountComponent from "../components/AccountComponent";
+import { AccountStore } from "../data/AccountStore";
 
 const Accounts: React.FC = () => {
+	const accounts = AccountStore.useState((s) => s.accounts);
+	const slidesRef = useRef(null);
 	return (
 		<IonPage>
 			<IonHeader>
@@ -20,9 +30,28 @@ const Accounts: React.FC = () => {
 					<IonTitle>Accounts</IonTitle>
 				</IonToolbar>
 			</IonHeader>
-			<IonContent className="ion-padding">UI goes here...</IonContent>
+			<IonContent fullscreen className="ion-padding">
+				<IonGrid>
+					<IonRow className="ion-justify-content-center">
+						<IonCol className="ion-padding-top" size="12">
+							<Swiper ref={slidesRef} slidesPerView={1}>
+								{accounts.map((account, index) => {
+									return (
+										<SwiperSlide
+											key={`slide_${index}`}
+											id={`slide_${index}`}
+											style={{ display: "flex", flexDirection: "column" }}
+										>
+											<AccountComponent key={index} {...account} />
+										</SwiperSlide>
+									);
+								})}
+							</Swiper>
+						</IonCol>
+					</IonRow>
+				</IonGrid>
+			</IonContent>
 		</IonPage>
 	);
 };
-
 export default Accounts;

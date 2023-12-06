@@ -35,14 +35,6 @@
     margin-top: 0.75rem;
 }
 
-.addButton {
-    --border-radius: 500px !important;
-    width: fit-content !important;
-    margin-top: 0.45rem;
-    margin-left: 1rem;
-    opacity: 0.6;
-}
-
 .transactionList {
     width: 100%;
 }
