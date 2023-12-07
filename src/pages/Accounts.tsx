@@ -16,6 +16,7 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import AccountComponent from "../components/AccountComponent";
 import { AccountStore } from "../data/AccountStore";
+import "./Accounts.css";
 
 const Accounts: React.FC = () => {
 	const accounts = AccountStore.useState((s) => s.accounts);
@@ -31,16 +32,21 @@ const Accounts: React.FC = () => {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent fullscreen className="ion-padding">
-				<IonGrid>
-					<IonRow className="ion-justify-content-center">
+				<IonGrid className="full-height">
+					<IonRow className="ion-justify-content-center full-height">
 						<IonCol className="ion-padding-top" size="12">
-							<Swiper ref={slidesRef} slidesPerView={1}>
+							<Swiper ref={slidesRef} slidesPerView={1} className="full-height">
 								{accounts.map((account, index) => {
 									return (
 										<SwiperSlide
 											key={`slide_${index}`}
 											id={`slide_${index}`}
-											style={{ display: "flex", flexDirection: "column" }}
+											style={{
+												display: "flex",
+												flexDirection: "column",
+												justifyContent: "flex-start",
+												height: "100%",
+											}}
 										>
 											<AccountComponent key={index} {...account} />
 										</SwiperSlide>
