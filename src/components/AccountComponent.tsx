@@ -10,6 +10,8 @@ import {
 	IonItem,
 	IonLabel,
 	IonList,
+	IonSegment,
+	IonSegmentButton,
 } from "@ionic/react";
 import {
 	add,
@@ -57,7 +59,7 @@ const CardComponent: FC<Account> = (props) => {
 		transactions,
 	} = props;
 
-	const [infoShown, setInfoShown] = useState<string>("information");
+	const [infoShown, setInfoShown] = useState<any>("information");
 	const cards = AccountStore.useState((s) => s.cards).filter(
 		(card) => card.relatedAccount === number
 	);
@@ -84,6 +86,14 @@ const CardComponent: FC<Account> = (props) => {
 					</h1>
 				</IonCardContent>
 			</IonCard>
+			<IonSegment
+				value={infoShown}
+				onIonChange={(e) => setInfoShown(e.detail.value!)}
+			>
+				<IonSegmentButton value="information">Information</IonSegmentButton>
+				<IonSegmentButton value="transactions">Transactions</IonSegmentButton>
+				<IonSegmentButton value="cards">Cards</IonSegmentButton>
+			</IonSegment>
 
 			{infoShown === "information" && (
 				<div
@@ -146,7 +156,9 @@ const CardComponent: FC<Account> = (props) => {
 					<IonList>
 						{cards.map((card) => (
 							<IonItem key={card.id}>
-								<IonLabel className="ion-text-start">{card.type}</IonLabel>
+								<IonLabel className="ion-text-start ion-text-capitalize">
+									{card.type}
+								</IonLabel>
 								<IonLabel className="ion-text-end">
 									{formatCardNumber(card.number)}
 								</IonLabel>
